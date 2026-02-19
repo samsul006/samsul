@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree System | Engineering Midterm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;700&display=swap');
+        
+        :root {
+            --tech-green: #00ff41;
+            --dark-bg: #0a0a0a;
+        }
+
+        body { 
+            font-family: 'JetBrains Mono', monospace; 
+            background-color: var(--dark-bg); 
+            color: var(--tech-green); 
+            background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        /* ตกแต่งมุมแบบ Blueprint */
+        .corner-mark::before {
+            content: ''; position: absolute; top: -1px; left: -1px; width: 15px; height: 15px;
+            border-top: 3px solid var(--tech-green); border-left: 3px solid var(--tech-green);
+        }
+
+        .scanline {
+            width: 100%; height: 2px; background: rgba(0, 255, 65, 0.1);
+            position: absolute; animation: scan 4s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { top: 0; } 100% { top: 100%; }
+        }
+    </style>
+</head>
+<body class="min-h-screen p-6 md:p-12">
+
+    <div class="max-w-6xl mx-auto">
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 border-b border-zinc-800 pb-6">
+            <div>
+                <h1 class="text-4xl font-bold tracking-tighter uppercase italic">
+                    <span class="text-white">PROJECT:</span> TREES_DEPLOY
+                </h1>
+                <p class="text-xs text-zinc-500 mt-2 tracking-[0.3em]">MIDTERM EXAMINATION // SYSTEM READY</p>
+            </div>
+            <div class="mt-4 md:mt-0 text-right">
+                <div class="text-[10px] text-zinc-400">LATENCY: 14ms</div>
+                <div class="text-[10px] text-zinc-400 italic">DATE: FEB 19, 2026</div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <div class="lg:col-span-2 glass-panel p-8 corner-mark overflow-hidden">
+                <div class="scanline"></div>
+                <h2 class="text-xs mb-6 text-zinc-400 uppercase tracking-widest">>> Node Visualization</h2>
+                
+                <div class="flex items-center justify-center py-20">
+                    <svg width="240" height="240" viewBox="0 0 100 100" class="drop-shadow-[0_0_15px_rgba(0,255,65,0.4)]">
+                        <path d="M50 10 L30 40 M50 10 L70 40 M30 40 L15 75 M30 40 L45 75 M70 40 L85 75" stroke="#00ff41" stroke-width="1.5" />
+                        <circle cx="50" cy="10" r="4" fill="#00ff41" />
+                        <circle cx="30" cy="40" r="4" fill="#00ff41" />
+                        <circle cx="70" cy="40" r="4" fill="#00ff41" />
+                        <circle cx="15" cy="75" r="4" fill="#00ff41" />
+                        <circle cx="45" cy="75" r="4" fill="#00ff41" />
+                        <circle cx="85" cy="75" r="4" fill="#00ff41" />
+                    </svg>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4 mt-8 border-t border-zinc-800 pt-6">
+                    <div class="text-center"><div class="text-xs text-zinc-500">NODES</div><div class="text-xl text-white">06</div></div>
+                    <div class="text-center"><div class="text-xs text-zinc-500">DEPTH</div><div class="text-xl text-white">03</div></div>
+                    <div class="text-center"><div class="text-xs text-zinc-500">COMPLEXITY</div><div class="text-xl text-white">O(log n)</div></div>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-6">
+                <div class="glass-panel p-6 border-l-4 border-l-green-600">
+                    <h3 class="text-xs text-zinc-400 mb-4 tracking-widest uppercase">System Specs</h3>
+                    <ul class="text-sm space-y-3">
+                        <li class="flex justify-between border-b border-zinc-900 pb-1">
+                            <span>Status:</span> <span class="text-white">Active</span>
+                        </li>
+                        <li class="flex justify-between border-b border-zinc-900 pb-1">
+                            <span>Version:</span> <span class="text-white">1.0.4-stable</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-auto space-y-4">
+                    <a href="ใส่ลิงก์_GITHUB_ของคุณที่นี่" target="_blank" class="block w-full bg-white text-black py-4 px-4 text-center font-bold hover:bg-[#00ff41] transition-all uppercase text-xs tracking-[0.2em]">
+                        [01] LINK GITHUB REPOSITORY
+                    </a>
+                    <a href="ใส่ลิงก์_DEPLOY_ของคุณที่นี่" target="_blank" class="block w-full border border-[#00ff41] text-[#00ff41] py-4 px-4 text-center font-bold hover:bg-[#00ff41] hover:text-black transition-all uppercase text-xs tracking-[0.2em]">
+                        [02] URL LIVE DEPLOYMENT
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-16 text-[10px] text-zinc-600 flex justify-between uppercase tracking-widest italic">
+            <span>Terminal: User_001</span>
+            <span>All rights reserved // Engineering Faculty</span>
+        </footer>
+    </div>
+
+</body>
+</html>
